@@ -1,7 +1,7 @@
 package facades;
 
-import dtos.RenameMeDTO;
-import entities.RenameMe;
+import dtos.UserDTO;
+import entities.User;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -40,8 +40,8 @@ public class FacadeExample {
         return emf.createEntityManager();
     }
     
-    public RenameMeDTO create(RenameMeDTO rm){
-        RenameMe rme = new RenameMe(rm.getDummyStr1(), rm.getDummyStr2());
+    public UserDTO create(UserDTO rm){
+        User rme = new User(rm.getDummyStr1(), rm.getDummyStr2());
         EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();
@@ -50,32 +50,32 @@ public class FacadeExample {
         } finally {
             em.close();
         }
-        return new RenameMeDTO(rme);
+        return new UserDTO(rme);
     }
-    public RenameMeDTO getById(long id) { //throws RenameMeNotFoundException {
+    public UserDTO getById(long id) { //throws RenameMeNotFoundException {
         EntityManager em = emf.createEntityManager();
-        RenameMe rm = em.find(RenameMe.class, id);
+        User rm = em.find(User.class, id);
 //        if (rm == null)
 //            throw new RenameMeNotFoundException("The RenameMe entity with ID: "+id+" Was not found");
-        return new RenameMeDTO(rm);
+        return new UserDTO(rm);
     }
     
     //TODO Remove/Change this before use
     public long getRenameMeCount(){
         EntityManager em = getEntityManager();
         try{
-            long renameMeCount = (long)em.createQuery("SELECT COUNT(r) FROM RenameMe r").getSingleResult();
+            long renameMeCount = (long)em.createQuery("SELECT COUNT(r) FROM User r").getSingleResult();
             return renameMeCount;
         }finally{  
             em.close();
         }
     }
     
-    public List<RenameMeDTO> getAll(){
+    public List<UserDTO> getAll(){
         EntityManager em = emf.createEntityManager();
-        TypedQuery<RenameMe> query = em.createQuery("SELECT r FROM RenameMe r", RenameMe.class);
-        List<RenameMe> rms = query.getResultList();
-        return RenameMeDTO.getDtos(rms);
+        TypedQuery<User> query = em.createQuery("SELECT r FROM User r", User.class);
+        List<User> rms = query.getResultList();
+        return UserDTO.getDtos(rms);
     }
     
     public static void main(String[] args) {

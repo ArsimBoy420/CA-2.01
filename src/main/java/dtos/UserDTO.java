@@ -5,7 +5,8 @@
  */
 package dtos;
 
-import entities.RenameMe;
+import entities.User;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,24 +14,24 @@ import java.util.List;
  *
  * @author tha
  */
-public class RenameMeDTO {
+public class UserDTO {
     private long id;
     private String str1;
     private String str2;
 
-    public RenameMeDTO(String dummyStr1, String dummyStr2) {
+    public UserDTO(String dummyStr1, String dummyStr2) {
         this.str1 = dummyStr1;
         this.str2 = dummyStr2;
     }
     
-    public static List<RenameMeDTO> getDtos(List<RenameMe> rms){
-        List<RenameMeDTO> rmdtos = new ArrayList();
-        rms.forEach(rm->rmdtos.add(new RenameMeDTO(rm)));
+    public static List<UserDTO> getDtos(List<User> rms){
+        List<UserDTO> rmdtos = new ArrayList();
+        rms.forEach(rm->rmdtos.add(new UserDTO(rm)));
         return rmdtos;
     }
 
 
-    public RenameMeDTO(RenameMe rm) {
+    public UserDTO(User rm) {
         if(rm.getId() != null)
             this.id = rm.getId();
         this.str1 = rm.getDummyStr1();
