@@ -11,11 +11,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CA-2.01" target="1.5" />
+      <module name="CA-2.01" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CA-2.01" options="-endorseddirs C:\Users\lokia\OneDrive\Dokumenter\GitHub\CA_2\CA-2.01\target/endorsed" />
       <module name="rest_start_code" options="-endorseddirs C:\Users\lokia\OneDrive\Dokumenter\GitHub\CA_2\dat3-startcode\target/endorsed" />
     </option>
   </component>
