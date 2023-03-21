@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dat.sem3</groupId>
-    <artifactId>rest_start_code</artifactId>
+    <artifactId>CA-2.01</artifactId>
     <version>1.0.1</version>
     <packaging>war</packaging>
 
-    <name>rest_start_code</name>
+    <name>CA-2.01</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -20,7 +20,7 @@
 
         <!-- TODO: Add your own database name -->
         <!-- IMPORTANT-1: The database should exist on your droplet -->
-        <db.name>startcode</db.name>
+        <db.name>CA-2.01</db.name>
     </properties>
     
     <dependencies>
